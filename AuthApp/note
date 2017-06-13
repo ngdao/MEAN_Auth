@@ -3,5 +3,7 @@ _ When adding service to Angular app:
   + the above command wont change the app.component.ts so imports have t be added
   manually, services goes into providers array
 _ To use a service in component:
-  _import it in the component ts file
-  _inject the constructor "private instanceServiceName: serviceName"
+  +import it in the component ts file
+  +inject the constructor "private instanceServiceName: serviceName"
+
+_when Angularjwt looks for 'id_token' as default path
