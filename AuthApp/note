@@ -1,0 +1,7 @@
+_ When adding service to Angular app:
+  + generate using "ng g service serviceName"
+  + the above command wont change the app.component.ts so imports have t be added
+  manually, services goes into providers array
+_ To use a service in component:
+  _import it in the component ts file
+  _inject the constructor "private instanceServiceName: serviceName"
