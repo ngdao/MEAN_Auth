@@ -20,6 +20,9 @@ const app = express();
 const port = 3500;
 const users = require('./routes/users')
 
+//Set Static Folder
+app.use(express.static(path.join(__dirname,'public')));
+
 app.use(cors());
 
 //Body Parser Middleware
@@ -34,12 +37,9 @@ require('./config/passport')(passport);
 app.use('/users',users);
 
 //Index Route
-app.get('/', (req,res) => {
-    res.send('Invalid Endpoint!')
+app.get('*', (req,res) => {
+    res.sendFile(path.join(__dirname,'public/index.html'))
 });
-
-//Set Static Folder
-app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(port, () =>{
   console.log("Server started on port: "+ port);
